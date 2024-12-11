@@ -1,9 +1,15 @@
-import Home from "../pages/Home/Home"
+import { Outlet } from "react-router"
+import Footer from "../components/Footer/Footer"
+import Header from "../components/Header/Header"
 
 const MainLayout = () => {
   return (
    <>
-   <Home/>
+   <Header/>
+   <div>
+    <Outlet/>
+   </div>
+   <Footer/>
    </>
   )
 }
