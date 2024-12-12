@@ -1,13 +1,13 @@
-import { CarouselDefault } from "../carousel"
-
+import { CarouselDefault } from "../carousel";
+import { StickyNavbar } from "./Navbar";
 
 const Header = () => {
   return (
     <div>
-      <h1>This is header</h1>
-      <CarouselDefault/>
+      <StickyNavbar />
+      <CarouselDefault />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
