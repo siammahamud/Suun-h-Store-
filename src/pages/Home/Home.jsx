@@ -1,8 +1,12 @@
+import OfferModal from "../../components/Modal/OfferModal";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <OfferModal/>
+      <div>Home</div>
+    </div>
+  );
+};
 
-export default Home
+export default Home;

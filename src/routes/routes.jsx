@@ -6,7 +6,7 @@ import Contact from "../pages/Contact/Contact";
 import Products from "../pages/Products/Products";
 import NotFound from "../pages/Not-Found/NotFound";
 import Signin from "../pages/Auth/Sign-In/Signin";
-import Signup from "../pages/Auth/Sign-Up/Signup";
+import Signup from "../pages/Auth/Sign-Up/Signup";  
 
 const router = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "Home",
+        path: "/",
         element: <Home />,
       },
       {

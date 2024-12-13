@@ -48,7 +48,12 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/"} className="flex items-center">
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            isActive ? "text-blue-600 font-semibold" : "flex items-center"
+          }
+        >
           Home
         </NavLink>
       </Typography>
@@ -58,7 +63,12 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/products"} className="flex items-center">
+        <NavLink
+          to={"/products"}
+          className={({ isActive }) =>
+            isActive && "text-blue-600 font-semibold"
+          }
+        >
           Products
         </NavLink>
       </Typography>
@@ -68,9 +78,14 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/about"} className="flex items-center">
+        <NavLink
+          to={"/about"}
+          className={({ isActive }) =>
+            isActive && "text-blue-600 font-semibold"
+          }
+        >
           About
-        </NavLink >
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -78,9 +93,14 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-         <NavLink to={"/contact"} className="flex items-center">
+        <NavLink
+          to={"/contact"}
+          className={({ isActive }) =>
+            isActive && "text-blue-600 font-semibold"
+          }
+        >
           Contact
-        </NavLink >
+        </NavLink>
       </Typography>
     </ul>
   );
@@ -113,15 +133,20 @@ export function StickyNavbar() {
                 >
                 <span>Log In</span>
                 </Button> */}
-       
 
               <button className="relative w-36 h-12 overflow-hidden rounded-lg border border-gray-300">
-                <NavLink to={"/signup"} className="absolute inset-0 w-1/2 bg-blue-500 text-white flex items-center justify-center">
-               SignUp
+                <NavLink
+                  to={"/signup"}
+                  className="absolute inset-0 w-1/2 bg-blue-500 text-white flex items-center justify-center"
+                >
+                  SignUp
                 </NavLink>
-                <NavLink to={"/signin"} className="absolute inset-0 left-1/2 w-1/2 bg-cyan-400 font-bold text-white flex items-center justify-center">
+                <NavLink
+                  to={"/signin"}
+                  className="absolute inset-0 left-1/2 w-1/2 bg-primary-c font-bold text-white flex items-center justify-center"
+                >
                   Login
-                </NavLink >
+                </NavLink>
               </button>
             </div>
             <IconButton
@@ -165,7 +190,7 @@ export function StickyNavbar() {
         </div>
         <MobileNav open={openNav}>
           {navList}
-          <div className="flex items-center gap-x-1">
+          <div className="flex items-center gap-x-1 ">
             <Button fullWidth variant="text" size="sm" className="">
               <span>Log In</span>
             </Button>
