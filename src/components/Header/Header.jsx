@@ -1,11 +1,13 @@
 import { CarouselDefault } from "../carousel";
 import { StickyNavbar } from "./Navbar";
-
+import { useLocation } from "react-router-dom";
 const Header = () => {
+  const routelocation = useLocation();
+
   return (
-    <div>
+    <div className="bg-gradient-to-b from-blue-500 to-[#00CCDD]">
       <StickyNavbar />
-      <CarouselDefault />
+      {routelocation.pathname === "/" && <CarouselDefault />}
     </div>
   );
 };
