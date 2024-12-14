@@ -5,7 +5,7 @@ const Header = () => {
   const routelocation = useLocation();
 
   return (
-    <div className="bg-gradient-to-b from-blue-500 to-[#00CCDD]">
+    <div className="bg-gradient-to-b from-blue-500 ">
       <StickyNavbar />
       {routelocation.pathname === "/" && <CarouselDefault />}
     </div>

@@ -33,7 +33,9 @@ export function StickyNavbar() {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            isActive ? "text-blue-600 font-semibold" : "flex items-center"
+            `flex items-center p-2 font-semibold ${
+              isActive && "text-blue-600  underline underline-offset-4"
+            }`
           }
         >
           Home
@@ -48,7 +50,9 @@ export function StickyNavbar() {
         <NavLink
           to={"/products"}
           className={({ isActive }) =>
-            isActive && "text-blue-600 font-semibold"
+            `flex items-center p-2  font-semibold ${
+              isActive && "text-blue-600  underline underline-offset-4"
+            }`
           }
         >
           Products
@@ -63,7 +67,9 @@ export function StickyNavbar() {
         <NavLink
           to={"/about"}
           className={({ isActive }) =>
-            isActive && "text-blue-600 font-semibold"
+            `flex items-center p-2 font-semibold ${
+              isActive && "text-blue-600   underline underline-offset-4"
+            }`
           }
         >
           About
@@ -78,7 +84,9 @@ export function StickyNavbar() {
         <NavLink
           to={"/contact"}
           className={({ isActive }) =>
-            isActive && "text-blue-600 font-semibold"
+            `flex items-center p-2 font-semibold ${
+              isActive && "text-blue-600  underline underline-offset-4"
+            }`
           }
         >
           Contact
