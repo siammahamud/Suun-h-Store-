@@ -106,28 +106,26 @@ export function StickyNavbar() {
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <div className="flex items-center gap-x-1">
-              {/* <Button
-                variant="text"
-                size="sm"
-                className="hidden lg:inline-block"
-                >
-                <span>Log In</span>
-                </Button> */}
-
-              <button className="relative w-36 h-12 overflow-hidden rounded-lg border border-gray-300">
-                <NavLink
-                  to={"/signup"}
-                  className="absolute inset-0 w-1/2 bg-blue-500 text-white flex items-center justify-center"
-                >
-                  SignUp
-                </NavLink>
-                <NavLink
-                  to={"/signin"}
-                  className="absolute inset-0 left-1/2 w-1/2 bg-primary-c font-bold text-white flex items-center justify-center"
-                >
-                  Login
-                </NavLink>
-              </button>
+              {user ? (
+                <Button onClick={()=>auth.signOut()} fullWidth variant="gradient" size="sm" color="blue" className="hidden md:block">
+                  <span>Sign out</span>
+                </Button>
+              ) : (
+                <button  className="relative w-32 h-8 overflow-hidden rounded-lg border border-gray-300 hidden md:block">
+                  <NavLink
+                    to={"/signup"}
+                    className="absolute inset-0 w-1/2 bg-blue-500 text-white flex items-center justify-center h-fit py-1"
+                  >
+                    SignUp
+                  </NavLink>
+                  <NavLink
+                    to={"/signin"}
+                    className="h-fit py-1 absolute inset-0 left-1/2 w-1/2 bg-primary-c font-bold text-white flex items-center justify-center"
+                  >
+                    Login
+                  </NavLink>
+                </button>
+              )}
             </div>
             <IconButton
               variant="text"
@@ -168,12 +166,14 @@ export function StickyNavbar() {
             </IconButton>
           </div>
         </div>
+
+        {/* style for mobile devices  */}
         <MobileNav open={openNav}>
           {navList}
 
-          {/* sign out button on user conditioin */}
+          {/* sign out button on user condition */}
           {user ? (
-            <Button fullWidth variant="gradient" size="sm" className="">
+            <Button onClick={()=>auth.signOut()} fullWidth variant="gradient" size="sm" className="">
               <span>Sign out</span>
             </Button>
           ) : (
