@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = useState(false);
-  const [loading] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [progressValue, setProgressValue] = useState(0);
 
   useEffect(() => {
@@ -104,9 +104,12 @@ export function StickyNavbar() {
       </Typography>
     </ul>
   );
-
+ if(loading){
+  // return 
+ }
   return (
-    <div className=" max-h-[768px] w-[calc(100%+10px)]">
+    
+   <div className=" max-h-[768px] w-[calc(100%+10px)]">
       {loading && (
         <Progress
           className="absolute top-0 -left-1"
@@ -190,16 +193,24 @@ export function StickyNavbar() {
         </div>
         <MobileNav open={openNav}>
           {navList}
-          <div className="flex items-center gap-x-1 ">
-            <Button fullWidth variant="text" size="sm" className="">
-              <span>Log In</span>
-            </Button>
+
+          {/* sign out button on user conditioin */}
+          {user ? (
             <Button fullWidth variant="gradient" size="sm" className="">
-              <span>Sign in</span>
+              <span>Sign out</span>
             </Button>
-          </div>
+          ) : (
+            <div className="flex items-center gap-x-1 ">
+              <Button fullWidth variant="text" size="sm" className="">
+                <span>Log In</span>
+              </Button>
+              <Button fullWidth variant="gradient" size="sm" className="">
+                <span>Sign in</span>
+              </Button>
+            </div>
+          )}
         </MobileNav>
       </Navbar>
     </div>
-  );
+);
 }
