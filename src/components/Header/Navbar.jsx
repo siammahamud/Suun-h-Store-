@@ -6,15 +6,14 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Progress } from "@material-tailwind/react";
+
 import { useEffect, useState } from "react";
 import { auth } from "../../firebase/firebase.config";
 import { NavLink } from "react-router-dom";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = useState(false);
-  const [user, loading] = useAuthState(auth);
-  const [progressValue, setProgressValue] = useState(0);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     window.addEventListener(
@@ -22,23 +21,6 @@ export function StickyNavbar() {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-
-  useEffect(() => {
-    if (loading) {
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += 10; // প্রতি ধাপে ১০% বাড়ানো
-        if (progress >= 100) {
-          clearInterval(interval); // ১০০% হয়ে গেলে থামিয়ে দাও
-          setProgressValue(100);
-        } else {
-          setProgressValue(progress); // প্রগ্রেস আপডেট করো
-        }
-      }, 300); // প্রতি ৩০০ms পর আপডেট হবে
-    } else {
-      setProgressValue(0); // লোডিং শেষ হলে প্রগ্রেস ০% এ রিসেট
-    }
-  }, [loading]);
 
   const navList = (
     <ul className=" mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -104,22 +86,9 @@ export function StickyNavbar() {
       </Typography>
     </ul>
   );
- if(loading){
-  // return 
- }
-  return (
-    
-   <div className=" max-h-[768px] w-[calc(100%+10px)]">
-      {loading && (
-        <Progress
-          className="absolute top-0 -left-1"
-          value={progressValue}
-          size="sm"
-          variant="gradient"
-          color="blue"
-        />
-      )}
 
+  return (
+    <div className=" max-h-[768px] w-[calc(100%+10px)] sticky top-0 z-50">
       <Navbar className="relative mb-0.5 z-50 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
         <div className=" flex items-center justify-between text-blue-gray-900">
           <div>
@@ -212,5 +181,5 @@ export function StickyNavbar() {
         </MobileNav>
       </Navbar>
     </div>
-);
+  );
 }
