@@ -10,6 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
 import { auth } from "../../firebase/firebase.config";
 import { NavLink } from "react-router-dom";
+import { InputWithButton } from "../searchBox/searchInput";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = useState(false);
@@ -29,18 +30,7 @@ export function StickyNavbar() {
         variant="h6"
         color="blue-gray"
         className="p-1 font-normal"
-      >
-        <NavLink
-          to={"/"}
-          className={({ isActive }) =>
-            `flex items-center p-2 font-semibold ${
-              isActive && "text-blue-600  underline underline-offset-4"
-            }`
-          }
-        >
-          Home
-        </NavLink>
-      </Typography>
+      ></Typography>
       <Typography
         as="li"
         variant="h6"
@@ -99,19 +89,27 @@ export function StickyNavbar() {
     <div className=" max-h-[768px] w-[calc(100%+10px)] sticky top-0 z-50">
       <Navbar className="relative mb-0.5 z-50 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
         <div className=" flex items-center justify-between text-blue-gray-900">
-          <div>
+          <NavLink to={"/"}>
             <img className="w-40" src="/src/assets/logo.png" alt="" />
-          </div>
-
+          </NavLink>
+          {/* search box  */}
+          <InputWithButton />
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <div className="flex items-center gap-x-1">
               {user ? (
-                <Button onClick={()=>auth.signOut()} fullWidth variant="gradient" size="sm" color="blue" className="hidden md:block">
+                <Button
+                  onClick={() => auth.signOut()}
+                  fullWidth
+                  variant="gradient"
+                  size="sm"
+                  color="blue"
+                  className="hidden md:block"
+                >
                   <span>Sign out</span>
                 </Button>
               ) : (
-                <button  className="relative w-32 h-8 overflow-hidden rounded-lg border border-gray-300 hidden md:block">
+                <button className="relative w-32 h-8 overflow-hidden rounded-lg border border-gray-300 hidden md:block">
                   <NavLink
                     to={"/signup"}
                     className="absolute inset-0 w-1/2 bg-blue-500 text-white flex items-center justify-center h-fit py-1"
@@ -173,7 +171,13 @@ export function StickyNavbar() {
 
           {/* sign out button on user condition */}
           {user ? (
-            <Button onClick={()=>auth.signOut()} fullWidth variant="gradient" size="sm" className="">
+            <Button
+              onClick={() => auth.signOut()}
+              fullWidth
+              variant="gradient"
+              size="sm"
+              className=""
+            >
               <span>Sign out</span>
             </Button>
           ) : (
