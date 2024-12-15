@@ -14,7 +14,6 @@ module.exports = withMT({
       container: {
         center: true,
         padding: "1.25rem",
-        // width:"90%"
       },
       colors: {
         primary: "#00BF63",
