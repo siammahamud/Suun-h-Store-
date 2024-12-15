@@ -1,10 +1,15 @@
 import { useState } from "react";
-
+// import { Button } from "@material-tailwind/react";
 import { Typography, Input, Button } from "@material-tailwind/react";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import SocialLogin from "../../../components/SocialLogin";
 import { NavLink, useNavigate } from "react-router-dom";
-import { loginInWithFacebook, loginWithEmailAndPassword, loginWithGithub, loginWithGoogle } from "../../../firebase/firebase";
+import {
+  loginInWithFacebook,
+  loginWithEmailAndPassword,
+  loginWithGithub,
+  loginWithGoogle,
+} from "../../../firebase/firebase";
 import { toast, ToastContainer } from "react-toastify";
 
 export default function Signin() {
@@ -55,7 +60,6 @@ export default function Signin() {
     });
   };
 
-
   return (
     <section className="grid text-center min-h-screen items-center p-8  bg-teal-50">
       <ToastContainer
@@ -70,6 +74,11 @@ export default function Signin() {
         pauseOnHover={true}
         theme="colored"
       />
+      <NavLink to={"/"}>
+        <Button className="float-left w-fit hover:bg-cyan-500" color="blue">
+          Back To Home
+        </Button>
+      </NavLink>
       <div>
         <Typography variant="h3" color="blue" className="">
           Sign In
@@ -164,9 +173,9 @@ export default function Signin() {
             </NavLink>
           </Typography>
           <SocialLogin
-           onloginWithGoogle={handleLoginWithGoogle}
-           onloginWithGithub={handleLoginWithGithub}
-           onloginWitFacebook={handleLoginWithFacebook}
+            onloginWithGoogle={handleLoginWithGoogle}
+            onloginWithGithub={handleLoginWithGithub}
+            onloginWitFacebook={handleLoginWithFacebook}
           />
         </form>
       </div>
