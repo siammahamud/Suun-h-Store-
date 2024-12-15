@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const TimeLeft = () => {
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-r from-green-500 to-green-600 rounded shadow-lg h-40 flex flex-col justify-center">
+    <div className="relative  container mt-8 overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 rounded shadow-lg h-40 flex flex-col justify-center">
       {/* Marquee Container */}
       <div className="relative w-full overflow-hidden h-full flex items-center">
         <div className="whitespace-nowrap text-white font-bold text-xl animate-marquee">

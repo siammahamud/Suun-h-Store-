@@ -44,7 +44,7 @@ const OfferTimer = ({ targetDate }) => {
   const seconds = String(timeLeft.seconds).padStart(2, "0");
 
   return (
-    <div className="w-[90%] mx-auto bg-blue-500 text-white p-4 shadow-md text-center mb-10 mt-8 rounded">
+    <div className="container bg-blue-500 text-white shadow-md text-center mb-10 mt-8 rounded">
       <h2 className="text-3xl font-bold mb-4">Upcoming Offer</h2>
       <div className="flex justify-center space-x-2 text-lg">
         <div>
