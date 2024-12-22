@@ -54,8 +54,8 @@ const About = () => {
           based on the Qur&apos;an and Sunnah following the path of the righteous
           predecessors.
         </p>{" "}
-        <h4 className="text-gray-800 font-semibold mt-5 mb-4">What We Offer</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 p-10 flex-grow ">
+        <h4 className="text-gray-800 font-semibold mt-5 mb-4 ">What We Offer</h4>
+        <div className=" shadow-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 p-10 flex-grow bg-gradient-to-b from-cyan-100">
           <div className="flex flex-col items-center text-center ">
             <FaGlobe className="text-4xl text-blue-500 mb-2" />
             <h4 className="text-gray-800 font-medium">Electronics</h4>

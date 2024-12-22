@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import TimeLeft from "./TimeLeft";
 
-const OfferTimer = ({ targetDate }) => {
+const   OfferTimer = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   // Function to calculate remaining time
@@ -44,7 +44,7 @@ const OfferTimer = ({ targetDate }) => {
   const seconds = String(timeLeft.seconds).padStart(2, "0");
 
   return (
-    <div className="container bg-blue-500 text-white shadow-md text-center mb-10 mt-8 rounded">
+    <div className="container bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md text-center mb-10 mt-8 rounded py-5">
       <h2 className="text-3xl font-bold mb-4">Upcoming Offer</h2>
       <div className="flex justify-center space-x-2 text-lg">
         <div>

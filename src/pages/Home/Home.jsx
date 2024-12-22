@@ -1,13 +1,13 @@
 import OfferModal from "../../components/Modal/OfferModal";
-import OfferTimer from "../../OfferTimer/OfferTimer";
+import OfferTimer from "../../components/OfferTimer/OfferTimer";
+
 
 const Home = () => {
-  const targetDate = "2024-12-15T00:00:00";
+  const targetDate = "2024-12-20T00:00:00";
   return (
     <div>
       <OfferModal/>
-      <OfferTimer targetDate={targetDate} />
-      <div>Home</div>
+      <OfferTimer targetDate={targetDate} />  
     </div>
   );
 };

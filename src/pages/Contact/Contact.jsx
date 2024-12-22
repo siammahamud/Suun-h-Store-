@@ -39,7 +39,7 @@ export function Contact() {
   };
 
   return (
-    <section className="px-8 py-4 lg:py-8">
+    <section className="px-8 ">
       <div className="container mx-auto text-center">
         <h5
           color="blue-gray"
@@ -47,8 +47,8 @@ export function Contact() {
         ></h5>
         <Typography
           variant="h1"
-          color="blue-gray"
-          className="mb-4 !text-3xl lg:!text-5xl"
+          color="cyan"
+          className="mb-4 !text-xl lg:!text-3xl"
         >
           Contact Us
         </Typography>
@@ -157,7 +157,7 @@ export function Contact() {
                 }}
               />
             </div>
-            <Button type="submit" className="w-full bg-[#00BF63]">
+            <Button type="submit" className="w-full bg-primary-c">
               Send message
             </Button>
           </form>
